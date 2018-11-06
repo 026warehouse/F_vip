@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>vip</title>
+    <script>
+        (function () {
+            var timer;
+            changeFixedW();
+            function changeFixedW() {
+                var width = window.screen.width;
+                var fixedW = 660;
+                var scale = width / fixedW;
+                var meta = document.createElement('meta');
+                meta.setAttribute('name','viewport');
+                meta.setAttribute('content','width='+fixedW+',initial-scale='+scale+',maximum-scale='+scale+',user-scalable=no');
+                document.head.appendChild(meta);
+            }
+            window.addEventListener('resize', function () {
+                clearTimeout(timer);
+                timer = setTimeout(changeFixedW, 300);
+            }, false);
+            window.addEventListener('pageshow', function (e) {
+                if (e.persisted) {
+                    clearTimeout(timer);
+                    timer = setTimeout(changeFixedW, 300);
+                }
+            }, false);
+
+
+        })();
+    </script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/list.css">
+</head>
+<body style="height: 1500px">
+
+    <!--头部-->
+    <section class="Affordable">
+        <div class="top-fix clearFix">
+            <div class="return  top-btn fl">
+                <a href="javascript:;"></a>
+            </div>
+            <div class="share top-btn fr">
+                <a href="javascript:;"></a>
+            </div>
+            <div class="top-title">
+                <a href="#">新人专享_今日特惠大牌</a>
+            </div>
+        </div>
+    </section>
+
+    <!--主体内容部分-->
+    <section class="main">
+        <!--大大的海报-->
+        <section class="bigAd">
+            <a href="../picList/index.html"><img src="img/bigAd.jpg" width="100%" height="100%" alt=""></a>
+        </section>
+
+        <!--优惠卷-->
+        <section class="coupon">
+            <a href="#"><img src="img/coupon.jpg" width="100%" height="100%" alt=""></a>
+        </section>
+
+        <!--新品选项卡导航-->
+        <section class="new-shop">
+            <nav>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </nav>
+        </section>
+
+        <!--新品服饰-->
+        <section class="clothes">
+            <div class="clothes-title">
+                <img src="img/clothes.jpg" width="100%" height="100%" alt="">
+            </div>
+            <div class="list">
+                <ul class="clearFix" id='ajaxUl'>
+                    
+
+                </ul>
+            </div>
+        </section>
+    </section>
+	<script src='js/timeMove.js'></script>
+    <script src="js/ajax1.js"></script>
+    <script src="js/list.js"></script>
+</body>
+</html>
+
+	<!-- <div class="brand-pic"><img src="img/clothes1.jpg" width="100%" height="100%" alt=""></div><div class="brand-logo"><img src="img/clothes1-1.png" width="100%" height="100%"  alt=""></div><div class="brand-msg"><p class="price fl" ><span>1.3</span>折起</p><p class="title fr">韩都衣舍HSTYLE女装春装专场</p></div><div class="des">韩版时尚简约立领呢大衣</div><div class="to-pay"><span>立即购买</span></div> -->
+
+<!-- 	
+	<li>
+		<a href="http://www.baidu.com">
+			
+			<div class="brand-pic"><img src="img/clothes1.jpg" width="100%" height="100%" alt=""></div>
+			
+			<div class="brand-logo"><img src="img/clothes1-1.png" width="100%" height="100%"  alt=""></div>
+			
+			<div class="brand-msg">
+				<p class="price fl" ><span>1.3</span>折起</p>
+				<p class="title fr">韩都衣舍HSTYLE女装春装专场</p>
+			</div>
+			<div class="des">韩版时尚简约立领呢大衣</div>
+
+			
+			<div class="to-pay">
+				<span>立即购买</span>
+			</div>
+		</a>
+	</li>
+
+-->
