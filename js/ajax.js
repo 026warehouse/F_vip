@@ -75,7 +75,7 @@ function ajax(opt) {
     }
     else if (opt.method.toUpperCase() === 'GET') {
         xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
-        xmlHttp.send(null);
+        xmlHttp.send();
     }
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
